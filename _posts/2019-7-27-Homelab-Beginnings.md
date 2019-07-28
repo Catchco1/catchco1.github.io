@@ -3,7 +3,7 @@ layout: post
 title: Homelab Beginnings
 ---
 
-# The Idea
+## The Idea
 
 Everybody needs a homelab. 
 
