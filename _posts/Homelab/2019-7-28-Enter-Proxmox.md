@@ -11,7 +11,7 @@ So instead, I chose to go with [Proxmox](https://www.proxmox.com/en/), the open 
 
 The only issue I really ran into was that the networking was not set up correctly initially. I took most of the default settings at installation, and the gateway was set to be 127.0.0.1, which was not correct for my current apartment internet obviously. So instead I changed it to be the address of my router, and I was able to log reach the web interface for Proxmox.
 
-![Proxmox Dashboard](/images/ProxmoxDashboard.jpg)
+![Proxmox Dashboard](/images/ProxmoxDashboard.jpg "Proxmox Dashboard")
 
 I knew the first system I wanted to build was a CentOS 7 running Nagios Core to monitor all my future boxes. 
 
