@@ -35,6 +35,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Checkout StrikeHeatmap
+        uses: actions/checkout@v3
+        with:
+          repository: Catchco1/StrikeHeatmap
+          path: './strikemap'
+      - name: test
+        run: ls
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -58,6 +65,17 @@ jobs:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+      - name: Setup Python
+        uses: actions/setup-python@v4
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f strikemap/requirements.txt ]; then pip install -r strikemap/requirements.txt; fi
+      - name: Run strikemap
+        run: | 
+          cd strikemap
+          python main.py
+          mv strikes.gif ../public/assets/strikes.gif
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
