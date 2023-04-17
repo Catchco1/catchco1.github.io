@@ -75,7 +75,7 @@ jobs:
         run: | 
           cd strikemap
           python main.py
-          mv strikes.gif /public/assets/strikes.gif
+          mv strikes.gif ../public/assets/strikes.gif
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
