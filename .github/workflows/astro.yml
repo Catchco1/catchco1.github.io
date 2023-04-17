@@ -65,6 +65,17 @@ jobs:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+      - name: Setup Python
+        uses: actions/setup-python@v4
+      - name: Install dependencies
+        run: |
+          cd strikemap
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run strikemap
+        run: | 
+          python main.py
+          mv strikes.gif /public/assets/strikes.gif
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
