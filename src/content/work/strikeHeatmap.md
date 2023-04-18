@@ -20,4 +20,8 @@ I had seen Cornell's Labor Action Tracker (LAT) before, but I wanted to make som
 
 ## Technical Details
 
-I chose to use Python to gather the data from the LAT and to produce my final map. I have done some previous passion projects in Python webscraping. 
+I chose to use Python to gather the data from the LAT and to produce my final map. I had done some previous passion projects in Python webscraping, but I had never worked with mapping in this way. This was my introduction to shapefiles, and using them in conjungtion with other data to present information. 
+
+### Getting the Data
+
+The first problem was extracting the data from the LAT. I had hoped to just scrape using `requests` and use pandas to parse it, but unfortunately, since this tracker updates in real-time, it is a dynamically generated web page. I reached out to the creators to try and access the data in another form like a spreadsheet, but hearing nothing, I changed tactics. I used Selenium to get a copy of the web page including all of the labor data back to 2021 when the project started. The next problem was that the data needed significant cleaning. The version of the LAT that the end user looks great. Unfortunately, the structure of the data in HTML was quite difficult to parse programatically. 
