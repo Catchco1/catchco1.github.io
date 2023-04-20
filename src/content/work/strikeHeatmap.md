@@ -18,6 +18,10 @@ This project began with a desire to apply some technical skills to the labor mov
 
 I had seen Cornell's [Labor Action Tracker](https://striketracker.ilr.cornell.edu/) (LAT) before, but I wanted to make something slightly different showing how many strikes are happening per state at a given time. This is somewhat captured in the LAT, but I believe the point of that project is to create a centralized database and show more specific information than what I was thinking of. 
 
+## Labor Analysis
+
+For this iteration of this project, I think more time is needed to draw any broader conclusions about the labor movement. One thing that is apparent is that California is regularly (69.8% of the time at time of writing) the state with the most strikes going on over the last few years. 
+
 ## Technical Details
 
 I chose to use Python to gather the data from the LAT and to produce my final map. I had done some previous passion projects in Python webscraping, but I had never worked with mapping in this way. This was my introduction to shapefiles, and using them in conjungtion with other data to present information. 
@@ -28,4 +32,8 @@ The first problem was extracting the data from the LAT. I had hoped to just scra
 
 ### Mapping
 
-I was new to using shapefiles, so this was a fun learning experience. I was unaware that the US Census Bureau creates standard shapefiles for the public to use. I hope to use make some political maps in the future using the congressional district maps they provide. I was struggling to get the map to display how I wanted, but then I came across the [pygris](https://walker-data.com/pygris/) project. According to the website, "the goal of the package is to make it simple to access US Census geographic data." I was thankful for finding a package that helped automate some of the tedious mapping and sizing issues I had. 
+I was new to using shapefiles, so this was a fun learning experience. I was unaware that the US Census Bureau creates standard shapefiles for the public to use. I hope to use make some political maps in the future using the congressional district maps they provide. I was struggling to get the map to display how I wanted, but then I came across the [pygris](https://walker-data.com/pygris/) project. According to the website, "the goal of the package is to make it simple to access US Census geographic data." I was thankful for finding a package that helped automate some of the tedious mapping and sizing issues I had. I highly recommend it for those who are new to mapping in Python and need US maps. 
+
+### Drawing the Maps
+
+Unfortunately, I will probably be refactoring sometime soon. The first walkthrough I found on how to make choropleth maps suggested using `matplotlib`. I have recently discovered that `plotly` is probably the better choice for this, but alas, here we are. 
